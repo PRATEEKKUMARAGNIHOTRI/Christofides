@@ -156,7 +156,7 @@ def compute(M):
 	"""
 	MST = _csr_gen_triples(minimum_spanning_tree(csr_matrix(M)))
 	odd_vertices = _odd_vertices_of_MST(MST, csr_matrix(M).shape[0])
-	bipartite_set = [set(i) for i in itertools.combinations(set(odd_vertices), len(odd_vertices)/2)]
+	bipartite_set = [set(i) for i in itertools.combinations(set(odd_vertices), int(len(odd_vertices)/2))]
 	bipartite_graphs = bipartite_Graph(M, bipartite_set, odd_vertices)
 	indexes = min_Munkres(M, bipartite_graphs)
 	multigraph = create_Multigraph(M, MST, indexes, odd_vertices)
