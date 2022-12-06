@@ -8,7 +8,7 @@ import networkx as nx
 import copy
 import itertools
 from operator import itemgetter
-import graph
+# import graph
 import time
 
 def _csr_gen_triples(A):
